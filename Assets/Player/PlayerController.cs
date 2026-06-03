@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Time.timeScale = 1f;
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
     }
@@ -66,5 +67,10 @@ public class PlayerController : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
