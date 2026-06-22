@@ -7,10 +7,19 @@
             "id": "df70fa95-8a34-4494-b137-73ab6b9c7d37",
             "actions": [
                 {
+                    "name": "PhoneRot",
+                    "type": "Value",
+                    "id": "ed3ae84e-d48a-43e0-bb73-3816698b1667",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Drive",
                     "type": "Value",
-                    "id": "39fe4273-ad9e-466c-94cd-f0ddaf2151ee",
-                    "expectedControlType": "Vector2",
+                    "id": "13d02b24-3fb2-4151-b275-27ccd00a6fcf",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -18,9 +27,108 @@
             ],
             "bindings": [
                 {
-                    "name": "2D Vector",
-                    "id": "4354dfca-cb25-403a-9865-07b3dcd3ecce",
-                    "path": "2DVector",
+                    "name": "",
+                    "id": "68736d13-2c42-4dcf-9578-68d97db4c4a4",
+                    "path": "<Accelerometer>/acceleration/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PhoneRot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "3D Vector",
+                    "id": "bd49791b-7846-4a8c-a923-186a3c95ae7b",
+                    "path": "3DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PhoneRot",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "9f6161da-35ed-4e51-af3b-61909a0adc6b",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PhoneRot",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "e952dac9-bc0b-45bb-9870-c8a6e29c9623",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PhoneRot",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "62c25faf-3221-46ec-85d3-f6b57b4ea2c9",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PhoneRot",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "543a5395-7023-4724-b37f-85c29085d908",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PhoneRot",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "forward",
+                    "id": "83ae34c3-cec7-4215-8a7f-377c8ced2def",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PhoneRot",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "backward",
+                    "id": "0f2a496b-8c1c-42db-b6ad-e0c412847cd4",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PhoneRot",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "70444afa-cb9f-49ca-9344-85692aece546",
+                    "path": "<Touchscreen>/primaryTouch/position/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Touch",
+                    "action": "Drive",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Keyboard",
+                    "id": "e4306350-0d0c-4090-90b2-fa6aa642316b",
+                    "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -29,19 +137,8 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
-                    "id": "3cb485c3-edea-4d19-a8c1-6c801f7c63ca",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Drive",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "2da5f897-fcf7-46df-860b-02fc831d10cf",
+                    "name": "negative",
+                    "id": "89342f3c-24cd-4061-a143-987d31d9cf95",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
@@ -51,23 +148,12 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
-                    "id": "60c878ba-0917-4bf1-9f96-4d4a19f130fa",
-                    "path": "<Keyboard>/a",
+                    "name": "positive",
+                    "id": "f6c5e515-c15f-4b7c-b056-10775e66f1ca",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Drive",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "335dc086-ae7b-4e43-9561-0f517b617fba",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
                     "action": "Drive",
                     "isComposite": false,
                     "isPartOfComposite": true

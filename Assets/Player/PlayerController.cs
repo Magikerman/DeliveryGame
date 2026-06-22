@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -10,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     private float speed;
     private float rotation;
+
+    private UnityEngine.InputSystem.Gyroscope gyro;
 
     public float Speed => speed;
 
@@ -25,21 +28,89 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private TextMeshProUGUI scoreText;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private float screenResWidth;
+
     void Start()
     {
         Time.timeScale = 1f;
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
+
+        UnityEngine.InputSystem.EnhancedTouch.Touch.onFingerDown += OnFingerDown;
+
+        screenResWidth = Screen.currentResolution.width;
     }
 
-    // Update is called once per frame
+    void OnFingerDown(Finger controllFinger)
+    {
+        speed = playerInput.actions["Drive"].ReadValue<float>();
+
+        speed = (speed - 2160 / 2);
+
+        if (speed < 0)
+        {
+            speed = -1;
+            rotation *= -1;
+        }
+        else if (speed > 0)
+            speed = 1;
+
+        void OnFingerMove(Finger finger)
+        {
+            if (finger.index != controllFinger.index)
+                return;
+            int delta = (int)((finger.screenPosition.x - controllFinger.screenPosition.x) / 100);
+            speed = playerInput.actions["Drive"].ReadValue<float>();
+
+            speed = (speed - screenResWidth / 2);
+
+            if (speed < 0)
+            {
+                speed = -1;
+                rotation *= -1;
+            }
+            else if (speed > 0)
+                speed = 1;
+
+            if (delta != 0)
+            {
+                UnityEngine.InputSystem.EnhancedTouch.Touch.onFingerMove -= OnFingerMove;
+            }
+        }
+
+        void OnFingerUp(Finger finger)
+        {
+            if (finger.index != controllFinger.index)
+                return;
+
+            speed = 0;
+
+            UnityEngine.InputSystem.EnhancedTouch.Touch.onFingerDown += OnFingerDown;
+            UnityEngine.InputSystem.EnhancedTouch.Touch.onFingerMove -= OnFingerMove;
+            UnityEngine.InputSystem.EnhancedTouch.Touch.onFingerUp -= OnFingerUp;
+        }
+
+        UnityEngine.InputSystem.EnhancedTouch.Touch.onFingerDown -= OnFingerDown;
+        UnityEngine.InputSystem.EnhancedTouch.Touch.onFingerMove += OnFingerMove;
+        UnityEngine.InputSystem.EnhancedTouch.Touch.onFingerUp += OnFingerUp;
+    }
+
     void Update()
     {
-        speed = playerInput.actions["Drive"].ReadValue<Vector2>().y;
-        rotation = playerInput.actions["Drive"].ReadValue<Vector2>().x;
+        
 
-        if (speed < 0) rotation *= -1;
+        rotation = playerInput.actions["PhoneRot"].ReadValue<float>();
+
+        //Borrar al buildear
+        /*if (SystemInfo.deviceType == DeviceType.Desktop)
+        {
+            speed = playerInput.actions["Drive"].ReadValue<float>();
+
+            if (speed < 0)
+                rotation *= -1;
+        }*/
+
+        Debug.Log(Input.gyro.attitude);
 
         timeSurvived += Time.deltaTime;
         realTimeScoreText.text = (float)((int)(timeSurvived * 10)) /10+ "s";
