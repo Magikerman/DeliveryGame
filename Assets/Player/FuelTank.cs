@@ -20,7 +20,7 @@ public class FuelTank : MonoBehaviour
 
     private void Update()
     {
-        currentValue -= (Mathf.Abs(player.Speed) * Time.deltaTime) / drainMult;
+        currentValue -= (player.Rb.linearVelocity.magnitude * Time.deltaTime) * drainMult/10;
 
         bar.fillAmount = currentValue/maxValue;
 

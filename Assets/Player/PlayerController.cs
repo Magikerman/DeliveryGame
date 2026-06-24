@@ -8,11 +8,9 @@ public class PlayerController : MonoBehaviour
     private PlayerInput playerInput;
     private Rigidbody rb;
 
-    private float speed;
-    //private float rotation;
-    private Vector3 rotation;
+    public Rigidbody Rb => rb;
 
-    public float Speed => speed;
+    private Vector3 rotation;
 
     private float timeSurvived = 0;
 
@@ -37,28 +35,13 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 1f;
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //speed = playerInput.actions["Drive"].ReadValue<Vector2>().y;
-        //rotation = playerInput.actions["Drive"].ReadValue<Vector2>().x;
-
-        //if (speed < 0) rotation *= -1;
+        GlobarObjectiveMarker.marker.SetPlayer(transform);
     }
 
     private void FixedUpdate()
     {
-        /*rb.AddForce(transform.forward * speed * speedMult * Time.fixedDeltaTime, ForceMode.Impulse);
-
-        float speedRotModifier = Mathf.Clamp(rb.linearVelocity.magnitude / 10, 0, 10);
-        Vector3 rot = transform.right * rotation * rotationMult * speedRotModifier;
-
-        transform.forward = Vector3.Lerp(transform.forward, rot, Time.fixedDeltaTime);*/
-
         rotation = axisFix * joystick.Horizontal + axisFixSecond * joystick.Vertical;
-        //rotation = Vector3.forward * joystick.Horizontal + -Vector3.right * joystick.Vertical + axisFix;
 
         rotation.y = transform.forward.y;
 

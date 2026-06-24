@@ -4,6 +4,11 @@ public class WinCondition : MonoBehaviour
 {
     [SerializeField] GameObject victoryScreen;
 
+    private void Start()
+    {
+        GlobarObjectiveMarker.marker.SetGoal(transform);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         PlayerController player = other.GetComponent<PlayerController>();

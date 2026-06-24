@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Threading;
 using TMPro;
 using UnityEngine;
 
@@ -11,6 +13,9 @@ public class FPScounter : MonoBehaviour
     private void Awake()
     {
         fpsText = GetComponent<TextMeshProUGUI>();
+
+        Application.targetFrameRate = 120;
+        StartCoroutine("WaitForNextFrame");
     }
 
     void Update()
