@@ -64,13 +64,17 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c64179dec4ce6fe4bab60aa678d15f70, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c64179dec4ce6fe4bab60aa678d15f70, type: 3}
       propertyPath: m_Name
       value: BuildingCluster 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c64179dec4ce6fe4bab60aa678d15f70, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 126
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
