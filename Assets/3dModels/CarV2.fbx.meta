@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c64179dec4ce6fe4bab60aa678d15f70
+guid: 30957b57844d04e4cb562327ee3362fa
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Juego
-    second: {fileID: 2100000, guid: 1cbdd2d9e292c2045b4fb6f158baaa98, type: 2}
+      name: AtlsMat
+    second: {fileID: 2100000, guid: 0d6c421b3bc8d3e40912f49a08d6a54b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -35,7 +35,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1

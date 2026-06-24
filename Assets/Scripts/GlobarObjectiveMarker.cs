@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class GlobarObjectiveMarker : MonoBehaviour
@@ -9,8 +10,10 @@ public class GlobarObjectiveMarker : MonoBehaviour
 
     private Vector3 direction;
     private float rotation;
+    private float distance;
 
     [SerializeField] private float addToRot;
+    [SerializeField] private TextMeshProUGUI distanceText;
 
     private void Awake()
     {
@@ -34,6 +37,9 @@ public class GlobarObjectiveMarker : MonoBehaviour
     {
         direction = goalPosition.position - playerPosition.position;
         direction.y = 0;
+        distance = (float)(int)(direction.magnitude * 10) / 10;
+
+        distanceText.text = distance + "km";
 
         rotation = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;
         rotation += addToRot;
