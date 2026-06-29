@@ -27,7 +27,6 @@ public class LoadScene : MonoBehaviour
 
         while (!asyncOperation.isDone)
         {
-            Debug.Log(asyncOperation.progress);
             progress.fillAmount = asyncOperation.progress / 0.9f;
             yield return null;
         }

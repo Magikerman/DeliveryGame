@@ -14,4 +14,10 @@ public class Context : MonoBehaviour
     [Header("Distance checks")]
     public float keepDistance;
     public float keepClose;
+
+    private void Start()
+    {
+        player = GameManager.instance.player.transform;
+        playerRb = GameManager.instance.playerRb;
+    }
 }

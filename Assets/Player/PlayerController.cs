@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -20,6 +21,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speedMult;
     [SerializeField] private float rotationMult;
 
+    [SerializeField] private float nodeCheckSphereRadius;
+    [SerializeField] private LayerMask nodeLayer;
+
     [Header("Game Over")]
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private TextMeshProUGUI scoreText;
@@ -36,7 +40,13 @@ public class PlayerController : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
 
+        GetClosestNode();
+
         GlobarObjectiveMarker.marker.SetPlayer(transform);
+
+        GameManager.instance.player = gameObject;
+        GameManager.instance.playerRb = rb;
+        GameManager.instance.gasTank = GetComponent<FuelTank>();
     }
 
     private void FixedUpdate()
@@ -75,5 +85,30 @@ public class PlayerController : MonoBehaviour
     public void BackToMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void GetClosestNode()
+    {
+        PathfindingNode closestNode = null;
+
+        RaycastHit[] hits;
+        hits = Physics.SphereCastAll(transform.position, nodeCheckSphereRadius, Vector3.forward, nodeCheckSphereRadius, nodeLayer, QueryTriggerInteraction.UseGlobal);
+
+        float closestNodeDistance = Mathf.Infinity;
+
+        foreach (RaycastHit hit in hits)
+        {
+            if (hit.distance < closestNodeDistance)
+            {
+                PathfindingNode checkingNode = hit.collider.gameObject.GetComponent<PathfindingNode>();
+                if (checkingNode != null)
+                {
+                    closestNode = checkingNode;
+                    closestNodeDistance = hit.distance;
+                }  
+            }
+        }
+
+        GameManager.instance.playerClosestNode = closestNode;
     }
 }

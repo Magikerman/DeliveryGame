@@ -6,7 +6,7 @@ public class GlobarObjectiveMarker : MonoBehaviour
     public static GlobarObjectiveMarker marker;
 
     private Transform playerPosition;
-    private Transform goalPosition;
+    [SerializeField] private Transform goalPosition;
 
     private Vector3 direction;
     private float rotation;

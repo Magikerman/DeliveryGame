@@ -11,6 +11,12 @@ public static class SteeringBehaviour
         return dir;
     }
 
+    public static Vector3 GetRotation(Transform self, Transform player)
+    {
+        Vector3 dir = (player.position - self.position).normalized;
+        return dir;
+    }
+
     public static Vector3 GetFuturePos(Transform self, Transform player, Rigidbody playerRb, float maxPredictionTime)
     {
         Vector3 targetVelocity = Vector3.zero;
@@ -30,10 +36,16 @@ public static class SteeringBehaviour
         return futurePos;
     }
 
-    /*public static Vector3 Wander(Transform self, )
+    public static Vector3 Wander(Vector3 currentDirection, float maxAngleChange)
     {
+        float randomAngle = UnityEngine.Random.Range(-maxAngleChange, maxAngleChange);
+        Quaternion rotation = Quaternion.Euler(0f, randomAngle, 0f);
 
-    }*/
+        Vector3 newDirection = rotation * currentDirection;
+        newDirection.y = 0f;
+
+        return newDirection.normalized;
+    }
 
     public static ThrowData GetPredictedPositionThrowData(Vector3 targetPosition, Vector3 startPosition, Rigidbody playerRb)
     {

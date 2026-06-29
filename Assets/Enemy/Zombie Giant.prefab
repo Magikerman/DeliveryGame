@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8194986253994172733
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -3543368827743707821, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+      propertyPath: keepClose
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446038362589198726, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446038362589198726, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446038362589198726, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446038362589198726, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.795225
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446038362589198726, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446038362589198726, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 32.87027
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446038362589198726, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446038362589198726, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446038362589198726, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446038362589198726, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446038362589198726, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446038362589198726, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446038362589198726, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751329505804523038, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3078705412357956412, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+      propertyPath: m_Name
+      value: Zombie Giant
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1443713394721170053, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+    - {fileID: 1207500066823777549, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3078705412357956412, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 282466270738809316}
+    - targetCorrespondingSourceObject: {fileID: 3078705412357956412, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 4028198407756366579}
+  m_SourcePrefab: {fileID: 100100000, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+--- !u!1 &6558282116841538049 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3078705412357956412, guid: fd09fa2ea8807c34389b2f8047025f28, type: 3}
+  m_PrefabInstance: {fileID: 8194986253994172733}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &282466270738809316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6558282116841538049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b0fd3377db738488a6d132483fe68d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GiantController
+  enemyState: 0
+  rotSpeed: 90
+  speed: 999
+  circleRadius: 0.3
+  maxPredictionTime: 100
+  maxSpeed: 2
+  timeToAttack: 0
+  radius: 20
+  nodeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!114 &4028198407756366579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6558282116841538049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2490b806bca1ae7438bbf9c28883b52c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GiantTree

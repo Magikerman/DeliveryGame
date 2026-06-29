@@ -6,7 +6,7 @@ public class WinCondition : MonoBehaviour
 
     private void Start()
     {
-        GlobarObjectiveMarker.marker.SetGoal(transform);
+        //GlobarObjectiveMarker.marker.SetGoal(transform);
     }
 
     private void OnTriggerEnter(Collider other)
